@@ -17,7 +17,7 @@ public class Joueur {
     private int position;
     private Plateau plateau;
     
-    private List<Case> caseDetenue;
+    private int tourRestantPrison;
     
     /**
      *  Constructeur d'un joueur
@@ -25,14 +25,12 @@ public class Joueur {
      * @param fortune
      * @param position
      * @param plateau
-     * @param caseDetenue
      */
-    public Joueur(String nom, int fortune, int position, Plateau plateau, List<Case> caseDetenue) {
+    public Joueur(String nom, int fortune, int position, Plateau plateau) {
         this.nom = nom;
         this.fortune = fortune;
         this.position = position;
         this.plateau = plateau;
-        this.caseDetenue = caseDetenue;
         
     }
 
@@ -101,23 +99,20 @@ public class Joueur {
     }
 
     /**
-     *
-     * @return
+     * Un paiement
+     * @param loyer 
+     * @param j 
      */
-    public List<Case> getCaseDetenue() {
-        return caseDetenue;
-    }
-
-    /**
-     *
-     * @param caseDetenue
-     */
-    public void setCaseDetenue(List<Case> caseDetenue) {
-        this.caseDetenue = caseDetenue;
-    }
-
     
-    
+    public void paiement(int loyer, Joueur j){
+        if (loyer>this.fortune){
+            j.setFortune(j.getFortune() + this.fortune);
+            this.fortune = 0;
+        }else{
+            j.setFortune(j.getFortune() + this.fortune);
+            this.fortune = this.fortune - loyer;
+        }
+    }
     
 
 }
