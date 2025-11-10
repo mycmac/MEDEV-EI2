@@ -9,5 +9,6 @@ package org.centrale.medev.monopoly.monopoly;
  * @author Max
  */
 public class Joueur {
+    public String nom;
     
 }
