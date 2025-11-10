@@ -10,5 +10,6 @@ package org.centrale.medev.monopoly.monopoly;
  */
 public class Joueur {
     public String nom;
-    
+    public int fortune;
+    public int position;
 }
