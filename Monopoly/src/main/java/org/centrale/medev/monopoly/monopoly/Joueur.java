@@ -6,6 +6,7 @@ package org.centrale.medev.monopoly.monopoly;
 
 /**
  *
+<<<<<<< HEAD
  * @author selli
  */
 public class Joueur {
@@ -47,7 +48,4 @@ public class Joueur {
     public void setPlateau(Plateau plateau) {
         this.plateau = plateau;
     }
-    
-    
-    
 }
