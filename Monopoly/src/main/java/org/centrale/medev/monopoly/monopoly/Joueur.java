@@ -11,6 +11,7 @@ import java.util.List;
  * @author Max
  */
 public class Joueur {
+
     private String nom;
     private int fortune;
     private int position;
@@ -59,4 +60,5 @@ public class Joueur {
     }
     
     
+
 }
