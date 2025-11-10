@@ -12,6 +12,8 @@ public class Monopoly {
 
     public static void main(String[] args) {
         Plateau plateau = new Plateau();
-        
+        while (plateau.finDePartie()){
+            plateau.tourDeJeu();
+        }
     }
 }

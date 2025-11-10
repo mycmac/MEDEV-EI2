@@ -26,11 +26,10 @@ public class GoPrison extends CaseSpeciale {
 	 */
 	public void envoyerJoueurPrison(Joueur j) {
 		ArrayList<Case> plateau = j.getPlateau().getPlateau();
-		for (Case c : plateau) {
-			if (c.getNom().equals("Prison")) {
-				j.setCase(c);
+		for (Case case_jeu : plateau) {
+			if (case_jeu.getNom().equals("Prison")) {
+				j.setPosition(case_jeu.getNumero());
 				j.setTourRestantPrison(3);
-				
 				break;
 			}
 		}

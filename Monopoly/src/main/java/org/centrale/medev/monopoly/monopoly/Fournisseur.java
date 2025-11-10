@@ -46,7 +46,8 @@ public class Fournisseur extends CaseAchetable{
      * @param scoreDe score de dé du tour de jeu du joueur qui est arrivé sur cette case
      * @return le loyer à payer sur cette case selon le score de dé du joueur et le nombre de fournisseurs possédés par le joueur à payer
      */
-    public int calculerLoyer(Joueur prop, int scoreDe) {
+    
+    public int calculerLoyer(Joueur prop) {
         if (prop==null){
             return 0;
         }
