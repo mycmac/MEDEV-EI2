@@ -11,7 +11,9 @@ package org.centrale.medev.monopoly.monopoly;
 public class Monopoly {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
-        System.out.println("Test");
+        Plateau plateau = new Plateau();
+        while (plateau.finDePartie()){
+            plateau.tourDeJeu();
+        }
     }
 }

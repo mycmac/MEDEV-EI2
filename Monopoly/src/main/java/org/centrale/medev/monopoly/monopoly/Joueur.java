@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Random;
 
 /**
- *
+ * Un joueur
  * @author selli
  */
 public class Joueur {
@@ -108,10 +108,18 @@ public class Joueur {
         this.plateau = plateau;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getTourRestantPrison() {
         return tourRestantPrison;
     }
 
+    /**
+     *
+     * @param tourRestantPrison
+     */
     public void setTourRestantPrison(int tourRestantPrison) {
         this.tourRestantPrison = tourRestantPrison;
     }
@@ -132,26 +140,42 @@ public class Joueur {
         }
     }   
 
+    /**
+     *
+     * @return
+     */
     public int getNbGare() {
         return nbGare;
     }
 
+    /**
+     *
+     * @param nbGare
+     */
     public void setNbGare(int nbGare) {
         this.nbGare = nbGare;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getNbFournisseur() {
         return nbFournisseur;
     }
 
+    /**
+     *
+     * @param nbFournisseur
+     */
     public void setNbFournisseur(int nbFournisseur) {
         this.nbFournisseur = nbFournisseur;
     }
     
     /**
      * Un paiement
-     * @param loyer 
-     * @param j 
+     * @param loyer Le loyer a payer
+     * @param j Le proprietaire de la case
      */
     
     public void paiement(int loyer, Joueur j){
