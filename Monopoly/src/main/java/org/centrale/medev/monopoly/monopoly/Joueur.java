@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Random;
 
 /**
- * Un joueur
+ * Classe représentant un joueur
  * @author selli
  */
 public class Joueur {
@@ -24,14 +24,14 @@ public class Joueur {
     
     
     /**
-     *  Constructeur d'un joueur
-     * @param nom
-     * @param fortune
-     * @param position
-     * @param plateau
-     * @param nbGare
-     * @param nbFournisseur
-     * @param tourRestantPrison
+     * Constructeur d'un joueur complet
+     * @param nom son nom
+     * @param fortune sa fortune
+     * @param position sa position
+     * @param plateau le plateau sur lequel il joue
+     * @param nbGare le nombre de Gare qu'il possède
+     * @param nbFournisseur le nombre de fournisseur qu'il possède
+     * @param tourRestantPrison le nombre de tour qu'il doit encore passer en prison
      */
     
     public Joueur(String nom, int fortune, int position, Plateau plateau, int nbGare, int nbFournisseur, int tourRestantPrison) {    
