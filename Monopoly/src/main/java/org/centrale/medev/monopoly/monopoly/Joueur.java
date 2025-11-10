@@ -9,5 +9,7 @@ package org.centrale.medev.monopoly.monopoly;
  * @author Max
  */
 public class Joueur {
-    
+    public String nom;
+    public int fortune;
+    public int position;
 }
