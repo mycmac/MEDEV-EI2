@@ -150,8 +150,8 @@ public class Joueur {
     
     /**
      * Un paiement
-     * @param loyer 
-     * @param j 
+     * @param loyer Le loyer a payer
+     * @param j Le proprietaire de la case
      */
     
     public void paiement(int loyer, Joueur j){
