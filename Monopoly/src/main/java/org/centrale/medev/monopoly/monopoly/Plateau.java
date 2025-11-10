@@ -20,8 +20,6 @@ public class Plateau {
     private LinkedList<Joueur> joueurs;
     private ArrayList<Carte> piocheChance;
     private ArrayList<Carte> piocheCommune;
-    private ArrayList<Carte> defausseChance;
-    private ArrayList<Carte> defausseCommunaute;
     private int nbToursMax = 100;
     private int compteurTours = 1;
     /**
@@ -99,14 +97,15 @@ public class Plateau {
     }
 
     public void init_joueurs(int nbJoueurs){
+        joueurs = new LinkedList<Joueur>();
         for(int i=0; i<nbJoueurs; i++){
-            joueurs.add(new Joueur("Joueur "+Integer.toString(i), 1500, 0, this, 0, 0, 0));
+            joueurs.add(new Joueur("Joueur "+Integer.toString(i), 15000, 0, this, 0, 0, 0));
         }
     }
     
-    public void affiche(){
+    public void affiche(){  
         for(Case case_plateau : plateau){
-            case_plateau.toString();
+            System.out.println(case_plateau.toString());
         }
     }
 
@@ -145,18 +144,21 @@ public class Plateau {
     }
     
     public void initPlateau(){
+        plateau = new ArrayList<>();
+        piochechance = new ArrayList<>();
+        piocheCommunaute = new ArrayList<>();
         LinkedList<String> noms = new LinkedList<>();
-        noms.addAll(Arrays.asList("Case Départ","Boulevard de Belleville","Caisse de Communauté","Rue Lecourbe","Impôts sur le revenu",
-                "Gare Montparnasse","Rue de Vaugirard","Chance","Rue de Courcelles","Avenue de la République","Prison",
+        noms.addAll(Arrays.asList("Case Départ","Boulevard de Belleville","communaute","Rue Lecourbe","Impôts sur le revenu",
+                "Gare Montparnasse","Rue de Vaugirard","chance","Rue de Courcelles","Avenue de la République","Prison",
                 "Boulevard de la Villette","Compagnie de distribution d'électricité","Avenue de Neuilly","Rue de Paradis",
-                "Gare de Lyon","Avenue Mozart","Caisse de Communauté","Boulevard Saint-Michel","Place Pigalle","Parc Gratuit",
-                "Avenue Matignon","Chance","Boulevard Malesherbes","Avenue Henri-Martin","Gare du Nord","Faubourg Saint-Honoré",
+                "Gare de Lyon","Avenue Mozart","communaute","Boulevard Saint-Michel","Place Pigalle","Parc Gratuit",
+                "Avenue Matignon","chance","Boulevard Malesherbes","Avenue Henri-Martin","Gare du Nord","Faubourg Saint-Honoré",
                 "Place de la Bourse","Compagnie de distribution des eaux","Rue la Fayette","Allez en Prison","Avenue de Breteuil",
-                "Avenue Foch","Caisse de communauté","Boulevard des Capucines","Gare Saint-Lazare","Chance",
+                "Avenue Foch","communaute","Boulevard des Capucines","Gare Saint-Lazare","chance",
                 "Avenue des Champs-Elysées","Taxe de Luxe","Rue de la Paix"));
         for(int i=0;i<40;i++){
             
-            if(noms.get(i)=="Chance"||noms.get(i)=="Caisse de Communauté"){
+            if(noms.get(i)=="chance"||noms.get(i)=="communaute"){
                 plateau.add(new CaseCarte(noms.get(i),i,noms.get(i)));
             }
             else if(noms.get(i).substring(0,4)=="Gare"){
@@ -165,7 +167,7 @@ public class Plateau {
             else if(noms.get(i)=="Allez en Prison"){
                 plateau.add(new GoPrison(noms.get(i),i));
             }
-            else if(noms.get(i).substring(0,9)=="Compagnie"){
+            else if(noms.get(i).substring(0,6)=="Compag"){
                 plateau.add(new Fournisseur( (int) (sqrt(i+1)),null,i, noms.get(i)));
             }
             else if(noms.get(i)=="Case Départ"||noms.get(i)=="Prison"||noms.get(i)=="Parc Gratuit"){
