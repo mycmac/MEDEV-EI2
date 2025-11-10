@@ -17,10 +17,10 @@ public class CaseCarte extends CaseSpeciale{
     /**
      * Constructeur par défaut d'une case Carte
      */
-    /*public void CaseCarte() {
-        super();
+    public CaseCarte() {
+        super("chance", 02);
         type = "chance";
-    }*/
+    }
     
     /**
      * Constructeur d'une CaseCarte à partir de son type
