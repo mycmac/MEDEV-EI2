@@ -5,10 +5,11 @@
 package org.centrale.medev.monopoly.monopoly;
 
 import java.util.List;
+import java.util.Random;
 
 /**
- *  Un joueur
- * @author Max
+ *
+ * @author selli
  */
 public class Joueur {
 
@@ -98,21 +99,46 @@ public class Joueur {
         this.plateau = plateau;
     }
 
+    public int getTourRestantPrison() {
+        return tourRestantPrison;
+    }
+
+    public void setTourRestantPrison(int tourRestantPrison) {
+        this.tourRestantPrison = tourRestantPrison;
+    }
+    
+    /**
+     * Le joueur avance
+     * @param d lancer de dès
+     * @param c case
+     */
+
+    
+    
+    public void avance(int d,Case c){
+        for(int i=0; i<d;i++){
+            if (position+1<Plateau.getPlateauSize()){
+                position=position+1;
+            }else{
+                position=0;
+            }
+        }
+    }   
+    
     /**
      * Un paiement
      * @param loyer 
      * @param j 
      */
     
-    public void paiement(int loyer, Joueur j){
-        if (loyer>this.fortune){
-            j.setFortune(j.getFortune() + this.fortune);
+    public void paiement(int x, Joueur j){
+        if (x>this.fortune){
+            j.fortune += this.fortune;
             this.fortune = 0;
         }else{
-            j.setFortune(j.getFortune() + this.fortune);
-            this.fortune = this.fortune - loyer;
+            j.fortune += this.fortune;
+            this.fortune = this.fortune - x;
         }
     }
-    
-
+ 
 }
