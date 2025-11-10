@@ -34,4 +34,9 @@ public class GoPrison extends CaseSpeciale {
 			}
 		}
 	}
+	
+	@Override
+	public String toString() {
+		return "Aller en prison";
+	}
 }

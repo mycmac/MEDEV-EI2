@@ -16,4 +16,9 @@ public class Prison extends CaseSpeciale {
     public Prison() {
 		super(10, "Prison");
 	}
+	
+	@Override
+	public String toString() {
+		return "Prison";
+	}
 }
