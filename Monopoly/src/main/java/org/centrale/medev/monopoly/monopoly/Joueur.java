@@ -5,6 +5,7 @@
 package org.centrale.medev.monopoly.monopoly;
 
 import java.util.List;
+import java.util.Random;
 
 /**
  *
@@ -59,6 +60,14 @@ public class Joueur {
         this.caseDetenue = caseDetenue;
     }
     
-    
+    public void avance(int d,Case c){
+        for(int i=0; i<d;i++){
+            if (position+1<Plateau.plateau.size()){
+                position=position+1;
+            }else{
+                position=0;
+            }
+        }
+    }   
 
 }
