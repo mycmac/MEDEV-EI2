@@ -11,23 +11,23 @@ import java.util.ArrayList;
  * Les "?" et les coffres au trésor sur le plateau
  * @author jujus
  */
-public class CaseCarte extends CaseSpeciale {
+public class CaseCarte extends CaseSpeciale{
     private String type; //Type de la case : "chance" ou "communaute"
     
     /**
      * Constructeur par défaut d'une case Carte
      */
-    public void CaseCarte() {
+    /*public void CaseCarte() {
         super();
         type = "chance";
-    }
+    }*/
     
     /**
      * Constructeur d'une CaseCarte à partir de son type
      * @param type le type de la case "chance" ou "communaute"
      */
-    public void CaseCarte(String type){
-        super();
+    public CaseCarte(String type){
+        super("chance", 2);
         checkType(type);
         this.type = type;
     }
@@ -38,8 +38,8 @@ public class CaseCarte extends CaseSpeciale {
      * @param nom le nom de la case
      * @param type le type de la case : "chance" ou "communaute"
      */
-    public void CaseCarte(int numero, String nom, String type){
-        super(numero, nom);
+    public CaseCarte(String nom, int numero,  String type){
+        super(nom, numero);
         checkType(type);
         this.type = type;        
     }
@@ -55,10 +55,32 @@ public class CaseCarte extends CaseSpeciale {
     }
     
     /**
-     * Méthode de tirage
+    * Méthode de tirage aléatoire d'une carte dans la pioche
+    * @param pioche la liste de cartes disponibles
+    * @return une carte tirée au hasard
+    */
+    public Carte tirerUneCarte(ArrayList<Carte> pioche) {
+        if (pioche == null || pioche.isEmpty()) {
+            throw new IllegalArgumentException("La pioche est vide ou nulle.");
+        }
+
+        int index = (int) (Math.random() * pioche.size());
+        return pioche.get(index);
+   }
+
+    /**
+     * Guetter de type
+     * @return le type
      */
-    public Carte tirerUneCarte(ArrayList pioche){
-        
-        return cartePiochee;
+    public String getType() {
+        return type;
+    }
+
+    /**
+     * Le setter du type
+     * @param type le type
+     */
+    public void setType(String type) {
+        this.type = type;
     }
 }
