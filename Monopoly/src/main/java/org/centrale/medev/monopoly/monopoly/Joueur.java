@@ -131,13 +131,13 @@ public class Joueur {
      * @param j 
      */
     
-    public void paiement(int x, Joueur j){
-        if (x>this.fortune){
-            j.fortune += this.fortune;
+    public void paiement(int loyer, Joueur j){
+        if (loyer>this.fortune){
+            j.setFortune(this.fortune + j.getFortune());
             this.fortune = 0;
         }else{
-            j.fortune += this.fortune;
-            this.fortune = this.fortune - x;
+            j.setFortune(this.fortune + j.getFortune());
+            this.fortune = this.fortune - loyer;
         }
     }
  
