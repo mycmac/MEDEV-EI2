@@ -7,14 +7,14 @@ package org.centrale.medev.monopoly.monopoly;
 import java.util.ArrayList;
 
 /**
- * Classe de la case Aller en prison
+ * Classe de la case Attente
  * @author raphd-bee
  */
 public class Attente extends CaseSpeciale {
 	
 	/**
-	 * Constructeur de la case Aller en prison
+	 * Constructeur de la case Attente
 	 */
     public Attente() {
-		super(nom, 20);
+		super(nom, numero);
 	}
