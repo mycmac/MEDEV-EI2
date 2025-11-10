@@ -35,8 +35,12 @@ public class GoPrison extends CaseSpeciale {
 		}
 	}
 	
+	/**
+	 * Redéfinition de la fonction toString
+	 * @return Aller en prison
+	 */
 	@Override
 	public String toString() {
-		return "Aller en prison";
+		return this.getNom();
 	}
 }
