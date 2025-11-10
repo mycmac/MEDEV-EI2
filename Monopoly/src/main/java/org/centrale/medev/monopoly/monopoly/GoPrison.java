@@ -14,6 +14,7 @@ public class GoPrison extends CaseSpeciale {
 	
 	/**
 	 * Constructeur de la case Aller en prison
+         * 
 	 */
     public GoPrison() {
 		super(30, "Aller en prison");
