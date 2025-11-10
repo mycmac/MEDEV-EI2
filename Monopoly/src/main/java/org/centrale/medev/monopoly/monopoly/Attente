@@ -16,5 +16,5 @@ public class Attente extends CaseSpeciale {
 	 * Constructeur de la case Aller en prison
 	 */
     public Attente() {
-		super("parc gratuit", 20);
+		super(nom, 20);
 	}
