@@ -14,10 +14,23 @@ public class GoPrison extends CaseSpeciale {
 	
 	/**
 	 * Constructeur de la case Aller en prison
-         * 
+	 * @param numero Numéro de la case
 	 */
+
     public GoPrison() {
 		super("Aller en prison", 30 );
+    }
+    public GoPrison(int numero) {
+		super("Aller en prison", numero);
+	}
+
+	/**
+	 * Constructeur de la case Aller en prison
+	 * @param nom Nom de la case
+	 * @param numero Numéro de la case
+	 */
+    public GoPrison(String nom, int numero) {
+		super(nom, numero);
 	}
 	
 	/**
