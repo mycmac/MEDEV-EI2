@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Random;
 
 /**
- *
+ * Un joueur
  * @author selli
  */
 public class Joueur {
