@@ -77,4 +77,52 @@ public class Carte {
             throw new IllegalArgumentException("Type de case invalide : " + type);
         }
     }
+
+    /**
+     * Guetter de type
+     * @return le type
+     */
+    public String getType() {
+        return type;
+    }
+
+    /**
+     * Le setter du type
+     * @param type le nouveau type
+     */
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    /**
+     * Le getter des effets
+     * @return les effets
+     */
+    public int getEffet() {
+        return effet;
+    }
+
+    /**
+     * Le setter des effets
+     * @param effet le nouveau montant
+     */
+    public void setEffet(int effet) {
+        this.effet = effet;
+    }
+
+    /**
+     * Le getter du text
+     * @return le texte de la carte
+     */
+    public String getTexte() {
+        return texte;
+    }
+
+    /**
+     * Le setter du texte
+     * @param texte le nouveau texte de la carte
+     */
+    public void setTexte(String texte) {
+        this.texte = texte;
+    }
 }

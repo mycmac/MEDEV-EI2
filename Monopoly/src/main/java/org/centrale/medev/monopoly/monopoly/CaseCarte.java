@@ -67,4 +67,20 @@ public class CaseCarte extends CaseSpeciale{
         int index = (int) (Math.random() * pioche.size());
         return pioche.get(index);
    }
+
+    /**
+     * Guetter de type
+     * @return le type
+     */
+    public String getType() {
+        return type;
+    }
+
+    /**
+     * Le setter du type
+     * @param type le type
+     */
+    public void setType(String type) {
+        this.type = type;
+    }
 }
