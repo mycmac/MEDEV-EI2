@@ -15,6 +15,10 @@ import java.util.LinkedList;
 public class Plateau {
     private ArrayList<Case> plateau;
     private LinkedList<Joueur> joueurs;
+    private ArrayList<Carte> piocheChance;
+    private ArrayList<Carte> piocheCommunaute;
+    private ArrayList<Carte> defausseChance;
+    private ArrayList<Carte> defausseCommunaute;
     private int nbToursMax = 100;
     private int compteurTours = 1;
     /**
