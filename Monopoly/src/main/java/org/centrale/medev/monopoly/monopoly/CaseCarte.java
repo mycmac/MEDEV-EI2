@@ -26,8 +26,8 @@ public class CaseCarte extends CaseSpeciale{
      * Constructeur d'une CaseCarte à partir de son type
      * @param type le type de la case "chance" ou "communaute"
      */
-    public CaseCarte(String type, String nom, int numero){
-        super(nom, numero);
+    public CaseCarte(String type){
+        super("chance", 2);
         checkType(type);
         this.type = type;
     }
@@ -55,10 +55,16 @@ public class CaseCarte extends CaseSpeciale{
     }
     
     /**
-     * Méthode de tirage
-     */
-    public Carte tirerUneCarte(ArrayList pioche){
-        
-        return cartePiochee;
-    }
+    * Méthode de tirage aléatoire d'une carte dans la pioche
+    * @param pioche la liste de cartes disponibles
+    * @return une carte tirée au hasard
+    */
+    public Carte tirerUneCarte(ArrayList<Carte> pioche) {
+        if (pioche == null || pioche.isEmpty()) {
+            throw new IllegalArgumentException("La pioche est vide ou nulle.");
+        }
+
+        int index = (int) (Math.random() * pioche.size());
+        return pioche.get(index);
+   }
 }
