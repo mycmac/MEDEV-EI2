@@ -10,5 +10,6 @@
         <maven.compiler.release>24</maven.compiler.release>
         <exec.mainClass>org.centrale.medev.monopoly.monopoly.Monopoly</exec.mainClass>
         <sonar.organization>mycmac</sonar.organization>
+        <java.version>17</java.version>
     </properties>
 </project>
